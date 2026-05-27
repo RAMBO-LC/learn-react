@@ -1,26 +1,28 @@
-import type { MouseEvent } from 'react' ;
-
-function ListGroup() {
-	let names = ["raj", "didi1", "didi2", "mummy", "papa"];
-
-    const eventHandler = (event: MouseEvent) => console.log(event)
-	const getMsg = () => {
-		return names.length === 0 && <p>No NAMES found</p>;
-	};
+import { useState } from "react";
+//interface
+interface Props {
+    names:string[],
+    Heading:string,
+}
+function ListGroup({names, Heading} : Props) {
+    //useState() is a  Hook
+    const [slctIndex, setSelectedIndex] = useState(-1);
 
 	return (
 		<>
-			<h1>HEADING</h1>
+			<h1>{Heading}</h1>
 			{/*we cant use 'if-statements here', 
             only exception is braces {}
             */}
-			{getMsg()}
 			<ul className="list-group">
 				{names.map((name, index) => (
 					<li
 						key={name}
-						onClick={eventHandler}
-						className="list-group-item"
+                        onClick={() => setSelectedIndex(index)}
+                        
+						className={
+							slctIndex === index ? "list-group-item active" : "list-group-item"
+						}
 					>
 						{name}
 					</li>
