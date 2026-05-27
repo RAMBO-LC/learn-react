@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+1. so React is a Library of JS, but for this lesson we will use TS and learn TS step by step.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. we used React + vite + TS.
 
-Currently, two official plugins are available:
+3. we used prettier to format our code and make it more readable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+4. we used Bootstrap for making components. first we used List grouping component and added the bootstrap sniipet for listing our component.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5. Fragements : WE CANT USE DIFFENRT TAGS, ause react dont return more than one element
 
-## Expanding the ESLint configuration
+   So, for Eg; if i want a Heading "<h1>"
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   React cannot return multiple elements directly.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   Wrong:
+   return (
+     <h1>Heading</h1>
+     <ul>
+       <li>Item</li>
+     </ul>
+   );
+   
+   
+    SOLUTION 1 : We will WRAP ths whole code in a <DIV>,
+                SELECT THE CODE and 'ctrl+shift+p' and seach for "Wrap with abbreviation",
+                and type "div" and press enter. it will wrap the code in a div.
+    Right:
+   <div>
+        <h1> HEADING </h1>
+     <ul>
+       <li>Item</li>
+     </ul>
+    </div>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    SOLUTION 2: we 'import {Fragament} from "react", and in place of "div" chnage it to "Fragament"
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    <Fragament>
+        <h1> HEADING </h1>
+        <ul>
+            <li>Item</li>
+        </ul>
+    </Fragament>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    SOLUTION 3: just add tine empty braces <> in place of <div> or <Fragment>;
+     this will tell react that we are using fragments even if we remove the import
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+6. 
