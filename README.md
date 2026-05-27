@@ -44,6 +44,3 @@ Example:
 Parent → sends handleClick() → Child uses it when button is clicked
 ```
 
-   Solution 2: Import Fragment from React and use <Fragment>...</Fragment>.
-
-   Solution 3: Use empty tags <>...</> as shorthand for Fragment without importing it.
