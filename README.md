@@ -26,9 +26,23 @@ Right:
        <>
    );
 ```
-   Solution 1 : Wrap everything inside a <div>.
-   Solution 2 :Import {Fragments}, Wrap everything inside a <Fragments>.
-   Solution 3(BEST) : Wrap everything inside a <>(empty).
+Solution 1 : Wrap everything inside a <div>.
+Solution 2 :Import {Fragments}, Wrap everything inside a <Fragments>.
+Solution 3(BEST) : Wrap everything inside a <>(empty).
+
+6. Passing Data via Props: Props are used to pass data from a parent component to a child component.
+
+Example: 
+```
+Parent → sends `"Raj"` → Child displays `"Hello Raj"`
+```
+
+7. Passing Function via Props: Props can also pass functions from a parent component to a child component.
+
+Example:
+```
+Parent → sends handleClick() → Child uses it when button is clicked
+```
 
    Solution 2: Import Fragment from React and use <Fragment>...</Fragment>.
 
