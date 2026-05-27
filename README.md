@@ -26,9 +26,11 @@ Right:
        <>
    );
 ```
-Solution 1 : Wrap everything inside a <div>.
-Solution 2 :Import {Fragments}, Wrap everything inside a <Fragments>.
-Solution 3(BEST) : Wrap everything inside a <>(empty).
+Solution 1 : Wrap everything inside a <div>
+
+Solution 2 :Import {Fragments}, Wrap everything inside a <Fragments>
+
+Solution 3(BEST) : Wrap everything inside a <>(empty)
 
 6. Passing Data via Props: Props are used to pass data from a parent component to a child component.
 
