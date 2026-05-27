@@ -1,51 +1,23 @@
 # Lessons short notes
 
-1. so React is a Library of JS, but for this lesson we will use TS and learn TS step by step.
+1. React is a JavaScript library, but in this lesson we are using TypeScript (TS) and learning it step by step.
 
-2. we used React + vite + TS.
+2. We created our project using React + Vite + TypeScript.
 
-3. we used prettier to format our code and make it more readable.
+3. We used Prettier to automatically format our code and make it cleaner and more readable.
 
-4. we used Bootstrap for making components. first we used List grouping component and added the bootstrap sniipet for listing our component.
+4. We used Bootstrap to build ready-made components; we used the List Group component by copying Bootstrap’s snippet.
 
-
-5. Fragements : WE CANT USE DIFFENRT TAGS, ause react dont return more than one element
-
-   So, for Eg; if i want a Heading "<h1>"
-
-   React cannot return multiple elements directly.
+5. Fragments: React cannot return multiple elements directly, so all elements must be wrapped inside one parent element.
 
    Wrong:
    return (
      <h1>Heading</h1>
-     <ul>
-       <li>Item</li>
-     </ul>
+     <ul><li>Item</li></ul>
    );
-   
-   
-    SOLUTION 1 : We will WRAP ths whole code in a <DIV>,
-                SELECT THE CODE and 'ctrl+shift+p' and seach for "Wrap with abbreviation",
-                and type "div" and press enter. it will wrap the code in a div.
-    Right:
-   <div>
-        <h1> HEADING </h1>
-     <ul>
-       <li>Item</li>
-     </ul>
-    </div>
 
-    SOLUTION 2: we 'import {Fragament} from "react", and in place of "div" chnage it to "Fragament"
+   Solution 1: Wrap everything inside a <div>.
 
-    <Fragament>
-        <h1> HEADING </h1>
-        <ul>
-            <li>Item</li>
-        </ul>
-    </Fragament>
+   Solution 2: Import Fragment from React and use <Fragment>...</Fragment>.
 
-    SOLUTION 3: just add tine empty braces <> in place of <div> or <Fragment>;
-     this will tell react that we are using fragments even if we remove the import
-
-
-6. 
+   Solution 3: Use empty tags <>...</> as shorthand for Fragment without importing it.
