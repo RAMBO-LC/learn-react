@@ -9,14 +9,26 @@
 4. We used Bootstrap to build ready-made components; we used the List Group component by copying Bootstrap’s snippet.
 
 5. Fragments: React cannot return multiple elements directly, so all elements must be wrapped inside one parent element.
+Wrong:
 ```
-   Wrong:
+
    return (
      <h1>Heading</h1>
      <ul><li>Item</li></ul>
    );
 ```
-   Solution 1: Wrap everything inside a <div>.
+Right:
+```
+   return (
+       <>
+          <h1>Heading</h1>
+          <ul><li>Item</li></ul>
+       <>
+   );
+```
+   Solution 1 : Wrap everything inside a <div>.
+   Solution 2 :Import {Fragments}, Wrap everything inside a <Fragments>.
+   Solution 3(BEST) : Wrap everything inside a <>(empty).
 
    Solution 2: Import Fragment from React and use <Fragment>...</Fragment>.
 
